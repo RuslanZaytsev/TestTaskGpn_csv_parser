@@ -1,18 +1,27 @@
-version: "3"
+version: "3.8"
 
 services:
-  backend:
-    build:
-      context: ./backend
-    ports:
-      - "8085:8085"
-    volumes:
-      - ./backend:/app
-    environment:
-      - NODE_ENV=production
-
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./frontend/build:/usr/share/nginx/html
     ports:
       - "80:80"
+    depends_on:
+      - frontend
+      - backend
