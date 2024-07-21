@@ -24,6 +24,10 @@ app.get("/csv", (req, res) => {
     });
 });
 
+app.get("/", (_, res) => {
+  res.send("привет !");
+});
+
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
