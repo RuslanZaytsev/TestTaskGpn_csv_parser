@@ -5,8 +5,6 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    ports:
-      - "3000:80"
 
   backend:
     build:
@@ -21,7 +19,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./frontend/build:/usr/share/nginx/html
     ports:
-      - "80:80"
+      - "8085:8085"
     depends_on:
       - frontend
       - backend

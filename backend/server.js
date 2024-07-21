@@ -25,7 +25,9 @@ app.get("/csv", (req, res) => {
 });
 
 app.get("/", (_, res) => {
-  res.send("привет !");
+  res.send(
+    "привет это сервер, приложение находится по адресу http://localhost:8085"
+  );
 });
 
 app.listen(3001, () => {
