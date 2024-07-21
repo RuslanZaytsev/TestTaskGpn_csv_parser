@@ -1,0 +1,7 @@
+FROM c:latest
+
+WORKDIR /app
+
+COPY . .
+
+CMD [ "JavaScript", "index.js" ]
