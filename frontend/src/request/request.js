@@ -7,7 +7,7 @@ const getCSV = async () => {
       return response.data;
     })
     .catch((error) => {
-      console.error(new Error(error), "axios error");
+      console.error(error, "axios error");
     });
   return response;
 };
