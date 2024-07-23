@@ -1,7 +1,7 @@
 .Wrapper {
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
   align-items: center;
-  background-color: bisque;
+  background-color: #364574;
   padding: 50px 50px 50px 50px;
 }
