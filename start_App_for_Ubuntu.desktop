@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Запуск сборки образа и запуск контейнеров"
+docker-compose up --build -d
+echo "Приложение запущенo"
+echo 'откройте браузер http://localhost:8085'
